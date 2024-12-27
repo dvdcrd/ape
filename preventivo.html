@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query String Test</title>
+</head>
+<body>
+    <h1>Query String Parameter</h1>
+    <p id="output">Regione: </p>
+
+    <script>
+        // Function to extract query parameters from URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the 'regione' parameter from the query string
+        const regione = getQueryParam('regione');
+
+        // Display the parameter value in the paragraph
+        const outputElement = document.getElementById('output');
+        outputElement.textContent += regione || "(Nessuna regione specificata)";
+    </script>
+</body>
+</html>
